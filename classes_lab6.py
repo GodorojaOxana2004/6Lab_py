@@ -2,8 +2,8 @@ from datetime import datetime  # Импортируем модуль для ра
 
 # Создаем класс Employee (Сотрудник)
 class Employee:
-    # Инициализируем объект с основными атрибутами
-    def __init__(self, nameEmployee, phone, bday, email, position):
+    # Инициализируем объект с основными атрибутами конструктор
+    def __init__(self, nameEmployee, phone, bday, email, position): 
         self.__nameEmployee = nameEmployee  # Имя сотрудника (скрытое поле)
         self.__phone = phone  # Телефон (скрытое поле)
         self.__bday = bday  # Дата рождения (скрытое поле)
@@ -11,11 +11,12 @@ class Employee:
         self.__position = position  # Должность (скрытое поле)
 
     # Создаем геттер и сеттер для имени
-    @property
+    @property # обращение к приватному полю
+    # Геттер для получения значения приватного поля __name
     def nameEmployee(self):
         return self.__nameEmployee
 
-    @nameEmployee.setter
+    @nameEmployee.setter  # Сеттер для установки значения приватного поля __name
     def nameEmployee(self, name):
         self.__nameEmployee = name
 
